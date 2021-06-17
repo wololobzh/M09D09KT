@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/nouvellePersonneFragment">
+    <fragment
+        android:id="@+id/nouvellePersonneFragment"
+        android:name="fr.eni.utilisateurauhasardkotlin.nouvelle_personne.NouvellePersonneFragment"
+        android:label="NouvellePersonneFragment" >
+        <action
+            android:id="@+id/action_nouvellePersonneFragment_to_randomPersonneFragment"
+            app:destination="@id/randomPersonneFragment"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_nouvellePersonneFragment_to_listePersonnesFragment"
+            app:destination="@id/listePersonnesFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomPersonneFragment"
+        android:name="fr.eni.utilisateurauhasardkotlin.random_personne.RandomPersonneFragment"
+        android:label="RandomPersonneFragment" >
+        <action
+            android:id="@+id/action_randomPersonneFragment_to_nouvellePersonneFragment"
+            app:destination="@id/nouvellePersonneFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listePersonnesFragment"
+        android:name="fr.eni.utilisateurauhasardkotlin.liste_personnes.ListePersonnesFragment"
+        android:label="ListePersonnesFragment" >
+        <action
+            android:id="@+id/action_listePersonnesFragment_to_nouvellePersonneFragment"
+            app:destination="@id/nouvellePersonneFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+</navigation>

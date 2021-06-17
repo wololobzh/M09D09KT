@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="randomPersonneViewModel"
+            type="fr.eni.utilisateurauhasardkotlin.random_personne.RandomPersonneViewModel" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_personne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{randomPersonneViewModel.personne.prenom}"
+            />
+
+        <Button
+            android:id="@+id/btn_hasard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Une personne au hasard"
+            app:layout_constraintLeft_toLeftOf="@id/tv_personne"
+            app:layout_constraintRight_toRightOf="@id/tv_personne"
+            app:layout_constraintTop_toBottomOf="@id/tv_personne"
+            android:onClick="@{() -> randomPersonneViewModel.randomPersonne()}"
+            />
+
+        <Button
+            android:id="@+id/btn_tout_le_monde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tout le monde"
+            app:layout_constraintLeft_toLeftOf="@id/tv_personne"
+            app:layout_constraintRight_toRightOf="@id/tv_personne"
+            app:layout_constraintTop_toBottomOf="@id/btn_hasard"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

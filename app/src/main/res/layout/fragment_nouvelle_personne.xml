@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="nouvellePersonneViewModel"
+            type="fr.eni.utilisateurauhasardkotlin.nouvelle_personne.NouvellePersonneViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_prenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="PRENOM"
+        android:text="@={nouvellePersonneViewModel.prenom}"
+        />
+
+    <EditText
+        android:id="@+id/et_nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_prenom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="NOM"
+        android:text="@={nouvellePersonneViewModel.nom}"
+        />
+
+    <Button
+        android:id="@+id/btn_enregistrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"
+        app:layout_constraintTop_toBottomOf="@id/et_nom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="@{() -> nouvellePersonneViewModel.enregistrer()}"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
